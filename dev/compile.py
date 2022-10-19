@@ -22,32 +22,36 @@ def combine(template, file_loc: str, variables):
 
     # Check if it's a html doc, if not just copy the file to the destination
     if file_loc.endswith('.html'):
+        # open all target file content
         f = open('dev/src/' + file_loc)
         file = f.read()
         f.close()
 
+        # split target file into info header and html content
         i = file.index("$ENDHEADER$")
         header = file[:i]
         content = file[i+11:].strip()
 
+        # make lookup that maps variable name to set value
         values = {}
         for line in re.findall("%[a-z]+% = .+\n", header):
             values[line[:line.index(' ')]] = line[line.index('=') + 2:-1]
 
+        # replace all variables in template with value from target
         o = template
         for v in variables:
             if v in values:
                 o = re.sub(v, values[v], o)
-            else:
-                if v != "%content%":
+            else:  # value not set in file
+                if v != "%content%":  # ignore %content% since this is where the document content goes
                     o = re.sub(v, "", o)
-        o = re.sub('%content%', content, o)
+        o = re.sub('%content%', content, o)  # insert document content into template
         f2 = open(file_loc, 'w')
         f2.write(o)
         f2.close()
 
     else:
-        shutil.copy("dev/src/" + file_loc, file_loc)
+        shutil.copy("dev/src/" + file_loc, file_loc)  # copy non html file
 
 
 def main():
