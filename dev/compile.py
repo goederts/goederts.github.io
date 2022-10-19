@@ -4,8 +4,8 @@ import re
 def find_files(src):
     files = []
     for file in os.listdir(src):
-        if os.path.isdir(file):
-            files += [file + f for f in find_files(src + file)]
+        if os.path.isdir(src + file):
+            files += [file + "/" + f for f in find_files(src + file + "/")]
         else:
             files.append(file)
     return files
@@ -34,7 +34,10 @@ def combine(template, file_loc: str, variables):
 
 
     o = re.sub('%content%', content, o)
-
+    if "/" in file_loc:
+        directory = file_loc[:file_loc.rindex("/")]
+        if not os.path.exists(directory):
+            os.mkdir(directory)
     f2 = open(file_loc, 'w')
     f2.write(o)
     f2.close()
@@ -47,8 +50,8 @@ def main():
     variables = re.findall("%[a-z]+%", template)
 
     files = find_files('dev/src/')
-    for file in files:
-        combine(template, file, variables)
+    for file_loc in files:
+        combine(template, file_loc, variables)
 
 
 
