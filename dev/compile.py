@@ -89,14 +89,18 @@ def find_partial_references(body):
     return results
 
 def parse_partial(content, rel_loc):
-    r = re.search("(%_[a-z]+_%\n[\r]?(\s+%[a-z]+% = .+\n[\r]?)+\s+%_[a-z]+_%)", content)
+    r = re.search("(%_[a-z]+_%\n[\r]?(\s*%[a-z]+% = .+\n[\r]?)+\s*%_[a-z]+_%)", content)
     while r is not None:  # while there are references, replace them
         ref = r.group()
         name = ref[1:ref.index("_%") + 1]
         values = get_values(ref)
 
         partial_loc = name + ".html"
-        rel_to_file = rel_loc[:rel_loc.rindex('/') + 1] + partial_loc
+        if "/" in rel_loc:
+            rel_to_file = rel_loc[:rel_loc.rindex('/') + 1] + partial_loc
+        else:
+            rel_to_file = partial_loc
+
         if os.path.exists('dev/src/' + partial_loc):  # test relative to dev/src
             partial_doc = read_all('dev/src/' + partial_loc)
         elif os.path.exists('dev/src/' + rel_to_file):  # test path relative to document
@@ -108,7 +112,7 @@ def parse_partial(content, rel_loc):
 
         content = content[:r.start()] + partial_doc + content[r.end():]
 
-        r = re.search("(%_[a-z]+_%\n[\r]?(\s+%[a-z]+% = .+\n[\r]?)+\s+%_[a-z]+_%)", content)
+        r = re.search("(%_[a-z]+_%\n[\r]?(\s*%[a-z]+% = .+\n[\r]?)+\s*%_[a-z]+_%)", content)
     return content
 
 def process_file(template, file_loc: str):
