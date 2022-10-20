@@ -88,6 +88,7 @@ def find_partial_references(body):
         results.append((name, values, (location, location + len(find))))
     return results
 
+
 def parse_partial(content, rel_loc):
     r = re.search("(%_[a-z]+_%\n[\r]?(\s*%[a-z]+% = .+\n[\r]?)+\s*%_[a-z]+_%)", content)
     while r is not None:  # while there are references, replace them
@@ -114,6 +115,7 @@ def parse_partial(content, rel_loc):
 
         r = re.search("(%_[a-z]+_%\n[\r]?(\s*%[a-z]+% = .+\n[\r]?)+\s*%_[a-z]+_%)", content)
     return content
+
 
 def process_file(template, file_loc: str):
     # Create the folder that contains the file if it doesn't exist
@@ -160,6 +162,7 @@ def main():
     for file_loc in files:
         process_file(template, file_loc)
 
+    # TODO delete production files that are no longer in dev/src/
 
 if __name__ == "__main__":
     main()
