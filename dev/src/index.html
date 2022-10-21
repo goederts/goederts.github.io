@@ -1,9 +1,23 @@
-%title% = Hello World
+%title% = Home
 
 $ENDHEADER$
-<div class="d-flex h-100 text-center mt-5">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+<style>
+    html, body {margin:0;padding:0;height:100%;}
+    .parallax {
+        background-image: url("bg.webp");
+        min-height: 500px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<div class="h-100 text-center parallax">
+    <div class="cover-container w-100 p-3 mx-auto pt-5">
         <main class="px-3">
+            <img src="portrait.jpg" class="rounded-4 img-fluid w-25 my-5">
             <h1>Samuel Goedert</h1>
             <p class="lead">Senior Computer Science at Milwaukee School of Engineering</p>
             <p class="lead">
@@ -14,15 +28,17 @@ $ENDHEADER$
     </div>
 </div>
 
-<div class="container">
+<div class="container mt-5 py-5">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 ">
         <div class="col">
             <div class="card shadow-sm">
                 <h4 class="card-header">Languages</h4>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <li class="list-group-item">Python</li>
+                    <li class="list-group-item">Java</li>
+                    <li class="list-group-item">JavaScript</li>
+                    <li class="list-group-item">C#</li>
+                    <li class="list-group-item">C++</li>
                 </ul>
             </div>
         </div>
@@ -30,9 +46,10 @@ $ENDHEADER$
             <div class="card shadow-sm">
                 <h4 class="card-header">Skills</h4>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <li class="list-group-item">Machine Learning</li>
+                    <li class="list-group-item">Computer Vision</li>
+                    <li class="list-group-item">Data Science</li>
+                    <li class="list-group-item">Natural Language Processing</li>
                 </ul>
             </div>
         </div>
@@ -40,9 +57,10 @@ $ENDHEADER$
             <div class="card shadow-sm">
                 <h4 class="card-header">Tools</h4>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <li class="list-group-item">Unix</li>
+                    <li class="list-group-item">Git</li>
+                    <li class="list-group-item">InfluxDB</li>
+                    <li class="list-group-item">MySQL</li>
                 </ul>
             </div>
         </div>
