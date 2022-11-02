@@ -7,6 +7,7 @@ $ENDHEADER$
     .parallax {
         background-image: url("bg.webp");
         min-height: 500px;
+        height: 100%;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -14,21 +15,26 @@ $ENDHEADER$
     }
 </style>
 
-<div class="h-100 text-center parallax">
+<div class="h-100 text-center parallax" style="min-height:49rem;">
     <div class="cover-container w-100 p-3 mx-auto pt-5">
         <main class="px-3">
-            <img src="portrait.jpg" class="rounded-4 img-fluid w-25 my-5">
+            <img src="portrait.jpg" class="rounded-4 img-fluid w-25 my-4">
             <h1>Samuel Goedert</h1>
-            <p class="lead">Senior Computer Science at Milwaukee School of Engineering</p>
+            <p class="lead">Senior Computer Science Student at Milwaukee School of Engineering</p>
             <p class="lead">
                 <a href="http://www.github.com/sgoeds" target="_blank" class="btn btn-outline-dark">GitHub</a>
                 <a href="https://www.linkedin.com/in/samuel-goedert/" target="_blank" class="btn btn-outline-dark">LinkedIn</a>
             </p>
+            <a href="#lower-content" class="smooth-scroll">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" class="bi bi-arrow-down mt-5" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                </svg>
+            </a>
         </main>
     </div>
 </div>
 
-<div class="container mt-5 py-5">
+<div id="lower-content" class="container mt-5 py-5">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 ">
         <div class="col">
             <div class="card shadow-sm">

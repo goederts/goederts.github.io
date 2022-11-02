@@ -9,7 +9,7 @@ def read_all(file_loc):
     :param file_loc: string of path to file
     :return: string of content of file
     """
-    f = open(file_loc, 'r')
+    f = open(file_loc, 'r', encoding="utf-8")
     content = f.read()
     f.close()
     return content
@@ -71,22 +71,22 @@ def insert_values(body: str, values: dict[str:str]):
     return body
 
 
-def find_partial_references(body):
-    """
-    Find all references in a document to partial templates
-    :param body: Document content of file
-    :return: list of tuples (name, dictionary of values, tuple of start and stop of reference)
-    see `get_values(...)` documentation for more info on the dictionary of values
-    """
-    results = []
-    regex = "(%_[a-z]+_%\n[\r]?(\s+%[a-z]+% = .+\n[\r]?)+\s+%_[a-z]+_%)"
-    for find in re.findall(regex, body):
-        find = find[0]
-        name = find[1:find.index("_%") + 1]
-        values = get_values(find)
-        location = body.index(find)
-        results.append((name, values, (location, location + len(find))))
-    return results
+# def find_partial_references(body):
+#     """
+#     Find all references in a document to partial templates
+#     :param body: Document content of file
+#     :return: list of tuples (name, dictionary of values, tuple of start and stop of reference)
+#     see `get_values(...)` documentation for more info on the dictionary of values
+#     """
+#     results = []
+#     regex = "(%_[a-z]+_%\n[\r]?(\s+%[a-z]+% = .+\n[\r]?)+\s+%_[a-z]+_%)"
+#     for find in re.findall(regex, body):
+#         find = find[0]
+#         name = find[1:find.index("_%") + 1]
+#         values = get_values(find)
+#         location = body.index(find)
+#         results.append((name, values, (location, location + len(find))))
+#     return results
 
 
 def parse_partial(content, rel_loc):
