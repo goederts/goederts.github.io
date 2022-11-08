@@ -3,9 +3,14 @@
 $ENDHEADER$
 
 <div class="container">
-    %_projectpage_%
-    %name% = Lenny Face Generator
-    %firstparagraph% = This is a project I made by myself in my spare time. I made this project as part of an exploratory experiment with Recurrent Neural Networks and Natural Language Processing. I used Python and Jupyter Notebooks to write my code and conduct experiments. The final product was a machine learning model that would generate lenny faces or complete one that a user started. I had the idea of turning it into a website that would generate a few lenny faces for the user and also have to feature of finishing one they started.
-    %secondparagraph% = This was a fun challenge for me, it required me to learn more about topics that I was interested in. I had to do research on recurrent neural networks and natural language processing. I ran into issues with the character encoding of the lenny faces. Since these types of models are used for language where there are only 26 letters and some punctuation characters, using the lenny faces was a challenge since they are made out of a wide variety of Unicode characters that may only appear once in the training dataset. One way of solving this problem was to remove any faces that contained a character that only appeared for that face. This greatly reduced the dataset which made it difficult to train the model. I improved my skills with TensorFlow since I had to make custom models and training sequences as opposed to the typical method of defining layers and training with the premade method.
-    %_projectpage_%
+    <h1 class="mt-4">Lenny Face Generator</h1>
+    <div class="d-md-flex">
+        <div>
+            <p>This is a project I made by myself in my spare time. I made this project as part of an exploratory experiment with Recurrent Neural Networks and Natural Language Processing. I used Python and Jupyter Notebooks to write my code and conduct experiments. The final product was a machine learning model that would generate lenny faces or complete one that a user started. I had the idea of turning it into a website that would generate a few lenny faces for the user and also have to feature of finishing one they started.</p>
+            <p>This was a fun challenge for me, it required me to learn more about topics that I was interested in. I had to do research on recurrent neural networks and natural language processing. I ran into issues with the character encoding of the lenny faces. Since these types of models are used for language where there are only 26 letters and some punctuation characters, using the lenny faces was a challenge since they are made out of a wide variety of Unicode characters that may only appear once in the training dataset. One way of solving this problem was to remove any faces that contained a character that only appeared for that face. This greatly reduced the dataset which made it difficult to train the model. I improved my skills with TensorFlow since I had to make custom models and training sequences as opposed to the typical method of defining layers and training with the premade method.</p>
+        </div>
+        <div>
+            <img src="lenny.jpg" style="max-width: 25rem;">
+        </div>
+    </div>
 </div>
