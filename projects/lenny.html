@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!--    <meta charset="UTF-8">-->
-    <title>Genetic Algorithm</title>
+    <title>Lenny Face Generator</title>
 </head>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -54,12 +54,11 @@
 
 <div class="container">
     
-<h1 class="mt-4">Layered Genetic Algorithm for Image Generation</h1>
+<h1 class="mt-4">Lenny Face Generator</h1>
 <img src="">
-<p>This project was a personal project that I picked up for fun. It is a genetic algorithm that generates images based on a user defined heuristic function. It differs from typical algorithms because it has a series of populations instead of just one. The 'most fit' item in each population contributes to the final product. The best item from each population is layered on top of the preceding item to improve accuracy and performance. The code is written in python and my experiments were done in Jupyter notebooks. After the algorithm was written and tested, I wrote a formal report on my findings that I originally had intent to publish but decided not to. This algorithm has potential for generating images given any heuristic function, especially when the function is not differentiable since it would not work for deep learning.</p>
-<p>During this project I ran into performance issues. The algorithm was very slow, and it forced me to think about how I can improve performance, which is an issue I rarely had to deal with in the past. I started this project without any experience with genetic algorithms, I read many papers and watched many videos to fully understand how to implement the algorithm. Another skill I learned because of this project was object-oriented code in python. Before this project I had hardly made classes in python and mostly relied on the built-in data structures for my projects. During development of the algorithm, I realized that my lack of documentation was slowing me down, this forced me to write down more of my thoughts and explain my code more during my experiments. This was the first time I wrote a report of this magnitude on my own, it taught me how to rely solely on my own work to accomplish a large task.</p>
+<p>This is a project I made by myself in my spare time. I made this project as part of an exploratory experiment with Recurrent Neural Networks and Natural Language Processing. I used Python and Jupyter Notebooks to write my code and conduct experiments. The final product was a machine learning model that would generate lenny faces or complete one that a user started. I had the idea of turning it into a website that would generate a few lenny faces for the user and also have to feature of finishing one they started.</p>
+<p>This was a fun challenge for me, it required me to learn more about topics that I was interested in. I had to do research on recurrent neural networks and natural language processing. I ran into issues with the character encoding of the lenny faces. Since these types of models are used for language where there are only 26 letters and some punctuation characters, using the lenny faces was a challenge since they are made out of a wide variety of Unicode characters that may only appear once in the training dataset. One way of solving this problem was to remove any faces that contained a character that only appeared for that face. This greatly reduced the dataset which made it difficult to train the model. I improved my skills with TensorFlow since I had to make custom models and training sequences as opposed to the typical method of defining layers and training with the premade method.</p>
 
-    <a class="btn btn-outline-dark" target="_blank" href="https://github.com/sgoeds/GA-Image-Compressor">GitHub</a>
 </div>
 
 <div class="container mt-2">

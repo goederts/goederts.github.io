@@ -54,7 +54,7 @@ def get_values(header_content):
     return values
 
 
-def insert_values(body: str, values: dict[str:str]):
+def insert_values(body: str, values):
     """
     Inserts that values that the variables are to be set to into the correct positions
     :param body: The body of the document to insert the values into
@@ -163,6 +163,7 @@ def main():
         process_file(template, file_loc)
 
     # TODO delete production files that are no longer in dev/src/
+
 
 if __name__ == "__main__":
     main()
